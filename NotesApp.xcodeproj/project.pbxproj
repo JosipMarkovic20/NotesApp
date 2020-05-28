@@ -17,6 +17,12 @@
 		740D618324802FA3005F9BC5 /* CreateNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740D618224802FA3005F9BC5 /* CreateNoteViewModel.swift */; };
 		740D618524802FB0005F9BC5 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740D618424802FB0005F9BC5 /* CreateNoteViewController.swift */; };
 		740D6188248030F2005F9BC5 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740D6187248030F2005F9BC5 /* R.generated.swift */; };
+		740D618B248046FD005F9BC5 /* ColorCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740D618A248046FD005F9BC5 /* ColorCatalog.xcassets */; };
+		740D62D0248048FB005F9BC5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 740D62D2248048FB005F9BC5 /* Localizable.strings */; };
+		7491996624804B2A0011DCB7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491996524804B2A0011DCB7 /* Coordinator.swift */; };
+		7491996824804B350011DCB7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491996724804B350011DCB7 /* AppCoordinator.swift */; };
+		7491996A24804BB10011DCB7 /* CoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491996924804BB10011DCB7 /* CoordinatorDelegate.swift */; };
+		7491996D24804F310011DCB7 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491996C24804F310011DCB7 /* ViewModelType.swift */; };
 		7497E87F248023150095E77E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497E87E248023150095E77E /* AppDelegate.swift */; };
 		7497E883248023150095E77E /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497E882248023150095E77E /* NotesListViewController.swift */; };
 		7497E888248023160095E77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7497E887248023160095E77E /* Assets.xcassets */; };
@@ -48,6 +54,14 @@
 		740D618224802FA3005F9BC5 /* CreateNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewModel.swift; sourceTree = "<group>"; };
 		740D618424802FB0005F9BC5 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		740D6187248030F2005F9BC5 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		740D618A248046FD005F9BC5 /* ColorCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorCatalog.xcassets; sourceTree = "<group>"; };
+		740D618C248047E1005F9BC5 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		740D62D1248048FB005F9BC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		740D62D3248048FF005F9BC5 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7491996524804B2A0011DCB7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		7491996724804B350011DCB7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		7491996924804BB10011DCB7 /* CoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorDelegate.swift; sourceTree = "<group>"; };
+		7491996C24804F310011DCB7 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		7497E87B248023150095E77E /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7497E87E248023150095E77E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7497E882248023150095E77E /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				7497E87E248023150095E77E /* AppDelegate.swift */,
+				7491996924804BB10011DCB7 /* CoordinatorDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -155,6 +170,7 @@
 		740D616C24802AA8005F9BC5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7491996B24804F1E0011DCB7 /* ViewModelType */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,10 +250,37 @@
 		740D6189248030FD005F9BC5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				740D62CD24804890005F9BC5 /* Localizable */,
 				740D6187248030F2005F9BC5 /* R.generated.swift */,
 				7497E887248023160095E77E /* Assets.xcassets */,
+				740D618A248046FD005F9BC5 /* ColorCatalog.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		740D62CD24804890005F9BC5 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				740D62D2248048FB005F9BC5 /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		7491996424804B190011DCB7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7491996524804B2A0011DCB7 /* Coordinator.swift */,
+				7491996724804B350011DCB7 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		7491996B24804F1E0011DCB7 /* ViewModelType */ = {
+			isa = PBXGroup;
+			children = (
+				7491996C24804F310011DCB7 /* ViewModelType.swift */,
+			);
+			path = ViewModelType;
 			sourceTree = "<group>";
 		};
 		7497E872248023140095E77E = {
@@ -263,6 +306,7 @@
 		7497E87D248023150095E77E /* NotesApp */ = {
 			isa = PBXGroup;
 			children = (
+				7491996424804B190011DCB7 /* Coordinator */,
 				740D6189248030FD005F9BC5 /* Assets */,
 				740D616C24802AA8005F9BC5 /* Models */,
 				740D616B24802AA5005F9BC5 /* Database */,
@@ -365,6 +409,7 @@
 			knownRegions = (
 				en,
 				Base,
+				hr,
 			);
 			mainGroup = 7497E872248023140095E77E;
 			productRefGroup = 7497E87C248023150095E77E /* Products */;
@@ -383,7 +428,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7497E88B248023160095E77E /* LaunchScreen.storyboard in Resources */,
+				740D62D0248048FB005F9BC5 /* Localizable.strings in Resources */,
 				7497E888248023160095E77E /* Assets.xcassets in Resources */,
+				740D618B248046FD005F9BC5 /* ColorCatalog.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,12 +551,16 @@
 			files = (
 				7497E883248023150095E77E /* NotesListViewController.swift in Sources */,
 				740D617B24802F0D005F9BC5 /* NotesDetailsCoordinator.swift in Sources */,
+				7491996824804B350011DCB7 /* AppCoordinator.swift in Sources */,
 				740D617724802EF2005F9BC5 /* NotesListViewModel.swift in Sources */,
 				740D618324802FA3005F9BC5 /* CreateNoteViewModel.swift in Sources */,
 				740D617F24802F29005F9BC5 /* NotesDetailsViewController.swift in Sources */,
 				740D618124802F96005F9BC5 /* CreateNoteCoordinator.swift in Sources */,
 				740D617924802EFF005F9BC5 /* NotesListCoordinator.swift in Sources */,
+				7491996D24804F310011DCB7 /* ViewModelType.swift in Sources */,
 				7497E87F248023150095E77E /* AppDelegate.swift in Sources */,
+				7491996A24804BB10011DCB7 /* CoordinatorDelegate.swift in Sources */,
+				7491996624804B2A0011DCB7 /* Coordinator.swift in Sources */,
 				740D618524802FB0005F9BC5 /* CreateNoteViewController.swift in Sources */,
 				740D6188248030F2005F9BC5 /* R.generated.swift in Sources */,
 				740D617D24802F19005F9BC5 /* NotesDetailsViewModel.swift in Sources */,
@@ -535,10 +586,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		740D62D2248048FB005F9BC5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				740D62D1248048FB005F9BC5 /* en */,
+				740D62D3248048FF005F9BC5 /* hr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		7497E889248023160095E77E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7497E88A248023160095E77E /* Base */,
+				740D618C248047E1005F9BC5 /* hr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -550,6 +611,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -610,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

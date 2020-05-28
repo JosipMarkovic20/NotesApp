@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func setup(){
         self.window = UIWindow()
-        self.window?.rootViewController = NotesListViewController()
-        self.window?.makeKeyAndVisible()
+        guard let safeWindow = self.window else { return }
+        let appCoordinator = AppCoordinator(window: safeWindow)
+        appCoordinator.start()
     }
 }
 

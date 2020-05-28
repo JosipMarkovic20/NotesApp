@@ -7,14 +7,42 @@
 //
 
 import UIKit
+import SnapKit
 
 class NotesListViewController: UIViewController {
+    
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
 
+    let viewModel: NotesListViewModel
+    
+    init(viewModel: NotesListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemRed
+        setupUI()
     }
-
-
+    
+    func setupUI(){
+        view.addSubview(tableView)
+        self.title = R.string.localizable.title()
+        setupConstraints()
+    }
+    
+    func setupConstraints(){
+        tableView.snp.makeConstraints { (maker) in
+            maker.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
 }
 

@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit
+import SnapKit
+import RxSwift
+
+class NotesDetailsViewController: UIViewController{
+    
+}
