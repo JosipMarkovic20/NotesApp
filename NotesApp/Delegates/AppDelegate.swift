@@ -15,13 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        setupUiOptions()
+        setup()
         return true
     }
 
-    func setupUiOptions(){
+    func setup(){
         self.window = UIWindow()
-        self.window?.rootViewController = ViewController()
+        self.window?.rootViewController = NotesListViewController()
         self.window?.makeKeyAndVisible()
     }
 }
