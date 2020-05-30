@@ -13,6 +13,11 @@ class MockUserDefaults: UserDefaults{
     
     var notes: [Note]?
     
+    init?(notes: [Note]?){
+        self.notes = notes
+        super.init(suiteName: nil)
+    }
+    
     override func set(_ value: Any?, forKey defaultName: String) {
         if defaultName == UserDefaultsKeys.notes{
             guard let data = value as? Data else { return }

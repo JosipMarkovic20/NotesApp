@@ -1,5 +1,5 @@
 //
-//  Note.swift
+//  NotesListDelegate.swift
 //  NotesApp
 //
 //  Created by Josip Marković on 30/05/2020.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct Note: Codable, Equatable{
-    let title: String
-    let date: String
-    let content: String
+
+protocol NotesListDelegate: class{
+    func openNote(note: Note)
 }

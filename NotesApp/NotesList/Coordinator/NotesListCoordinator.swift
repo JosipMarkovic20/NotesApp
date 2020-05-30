@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class NotesListCoordinator: Coordinator{
     
@@ -25,7 +26,7 @@ class NotesListCoordinator: Coordinator{
     }
     
     static func createNotesListController() -> NotesListViewController{
-        let viewModel = NotesListViewModel(dependencies: NotesListViewModel.Dependencies())
+        let viewModel = NotesListViewModel(dependencies: NotesListViewModel.Dependencies(userDefaultsManager: UserDefaultsManager(userDefaults: UserDefaults.standard), subscribeScheduler: ConcurrentDispatchQueueScheduler(qos: .background)))
         let controller = NotesListViewController(viewModel: viewModel)
         return controller
     }

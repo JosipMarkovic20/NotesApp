@@ -16,7 +16,7 @@ class UserDefaultsManager{
     
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
-    let defaults: UserDefaults
+    var defaults: UserDefaults
     
     init(userDefaults: UserDefaults) {
         defaults = userDefaults
