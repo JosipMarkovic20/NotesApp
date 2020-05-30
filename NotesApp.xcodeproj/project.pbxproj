@@ -19,6 +19,10 @@
 		740D6188248030F2005F9BC5 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740D6187248030F2005F9BC5 /* R.generated.swift */; };
 		740D618B248046FD005F9BC5 /* ColorCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740D618A248046FD005F9BC5 /* ColorCatalog.xcassets */; };
 		740D62D0248048FB005F9BC5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 740D62D2248048FB005F9BC5 /* Localizable.strings */; };
+		74343F1124828F5C00D71C7D /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343F1024828F5C00D71C7D /* UserDefaultsManager.swift */; };
+		74343F1324828FA800D71C7D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343F1224828FA800D71C7D /* Note.swift */; };
+		74343F162482983600D71C7D /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343F152482983600D71C7D /* MockUserDefaults.swift */; };
+		74343F1824829C2600D71C7D /* UserDefaultsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343F1724829C2600D71C7D /* UserDefaultsManagerTests.swift */; };
 		7491996624804B2A0011DCB7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491996524804B2A0011DCB7 /* Coordinator.swift */; };
 		7491996824804B350011DCB7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491996724804B350011DCB7 /* AppCoordinator.swift */; };
 		7491996A24804BB10011DCB7 /* CoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491996924804BB10011DCB7 /* CoordinatorDelegate.swift */; };
@@ -58,6 +62,10 @@
 		740D618C248047E1005F9BC5 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		740D62D1248048FB005F9BC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		740D62D3248048FF005F9BC5 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		74343F1024828F5C00D71C7D /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		74343F1224828FA800D71C7D /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		74343F152482983600D71C7D /* MockUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
+		74343F1724829C2600D71C7D /* UserDefaultsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManagerTests.swift; sourceTree = "<group>"; };
 		7491996524804B2A0011DCB7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7491996724804B350011DCB7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7491996924804BB10011DCB7 /* CoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +155,7 @@
 		740D616924802AA0005F9BC5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				74343F0F24828F4700D71C7D /* UserDefaults */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -171,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				7491996B24804F1E0011DCB7 /* ViewModelType */,
+				74343F1224828FA800D71C7D /* Note.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,6 +276,22 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		74343F0F24828F4700D71C7D /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				74343F1024828F5C00D71C7D /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		74343F142482980100D71C7D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				74343F152482983600D71C7D /* MockUserDefaults.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		7491996424804B190011DCB7 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,7 +351,9 @@
 		7497E894248023160095E77E /* NotesAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				74343F142482980100D71C7D /* Mocks */,
 				7497E895248023160095E77E /* NotesAppTests.swift */,
+				74343F1724829C2600D71C7D /* UserDefaultsManagerTests.swift */,
 				7497E897248023160095E77E /* Info.plist */,
 			);
 			path = NotesAppTests;
@@ -553,8 +581,10 @@
 				740D617B24802F0D005F9BC5 /* NotesDetailsCoordinator.swift in Sources */,
 				7491996824804B350011DCB7 /* AppCoordinator.swift in Sources */,
 				740D617724802EF2005F9BC5 /* NotesListViewModel.swift in Sources */,
+				74343F1324828FA800D71C7D /* Note.swift in Sources */,
 				740D618324802FA3005F9BC5 /* CreateNoteViewModel.swift in Sources */,
 				740D617F24802F29005F9BC5 /* NotesDetailsViewController.swift in Sources */,
+				74343F1124828F5C00D71C7D /* UserDefaultsManager.swift in Sources */,
 				740D618124802F96005F9BC5 /* CreateNoteCoordinator.swift in Sources */,
 				740D617924802EFF005F9BC5 /* NotesListCoordinator.swift in Sources */,
 				7491996D24804F310011DCB7 /* ViewModelType.swift in Sources */,
@@ -571,6 +601,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74343F1824829C2600D71C7D /* UserDefaultsManagerTests.swift in Sources */,
+				74343F162482983600D71C7D /* MockUserDefaults.swift in Sources */,
 				7497E896248023160095E77E /* NotesAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
