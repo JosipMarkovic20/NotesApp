@@ -27,6 +27,12 @@
 		74343FBB2482D95E00D71C7D /* TableRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343FBA2482D95E00D71C7D /* TableRefresh.swift */; };
 		74343FBE2482EC0C00D71C7D /* NotesListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343FBD2482EC0C00D71C7D /* NotesListDelegate.swift */; };
 		74343FC02482ECFA00D71C7D /* MockNotesListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343FBF2482ECFA00D71C7D /* MockNotesListDelegate.swift */; };
+		74343FC32482EEDE00D71C7D /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343FC22482EEDE00D71C7D /* NoteCell.swift */; };
+		74343FC52483A74D00D71C7D /* EmptyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343FC42483A74D00D71C7D /* EmptyListCell.swift */; };
+		74343FC72483B35B00D71C7D /* CreateNoteViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343FC62483B35B00D71C7D /* CreateNoteViewModelTests.swift */; };
+		74343FCA2483C46A00D71C7D /* CreateNoteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343FC92483C46A00D71C7D /* CreateNoteDelegate.swift */; };
+		74343FCC2483C49A00D71C7D /* MockCreateNoteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343FCB2483C49A00D71C7D /* MockCreateNoteDelegate.swift */; };
+		74343FCF2483C96F00D71C7D /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74343FCE2483C96F00D71C7D /* DateUtils.swift */; };
 		7491996624804B2A0011DCB7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491996524804B2A0011DCB7 /* Coordinator.swift */; };
 		7491996824804B350011DCB7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491996724804B350011DCB7 /* AppCoordinator.swift */; };
 		7491996A24804BB10011DCB7 /* CoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491996924804BB10011DCB7 /* CoordinatorDelegate.swift */; };
@@ -73,6 +79,12 @@
 		74343FBA2482D95E00D71C7D /* TableRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRefresh.swift; sourceTree = "<group>"; };
 		74343FBD2482EC0C00D71C7D /* NotesListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListDelegate.swift; sourceTree = "<group>"; };
 		74343FBF2482ECFA00D71C7D /* MockNotesListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNotesListDelegate.swift; sourceTree = "<group>"; };
+		74343FC22482EEDE00D71C7D /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		74343FC42483A74D00D71C7D /* EmptyListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListCell.swift; sourceTree = "<group>"; };
+		74343FC62483B35B00D71C7D /* CreateNoteViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewModelTests.swift; sourceTree = "<group>"; };
+		74343FC92483C46A00D71C7D /* CreateNoteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteDelegate.swift; sourceTree = "<group>"; };
+		74343FCB2483C49A00D71C7D /* MockCreateNoteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCreateNoteDelegate.swift; sourceTree = "<group>"; };
+		74343FCE2483C96F00D71C7D /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		7491996524804B2A0011DCB7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7491996724804B350011DCB7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7491996924804BB10011DCB7 /* CoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +136,7 @@
 		740D616524802A94005F9BC5 /* CreateNote */ = {
 			isa = PBXGroup;
 			children = (
+				74343FC82483C44E00D71C7D /* Delegates */,
 				740D617524802B78005F9BC5 /* Coordinator */,
 				740D617424802B75005F9BC5 /* ViewModel */,
 				740D617324802B73005F9BC5 /* UI */,
@@ -162,6 +175,7 @@
 		740D616924802AA0005F9BC5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				74343FCD2483C95B00D71C7D /* DateUtils */,
 				74343F0F24828F4700D71C7D /* UserDefaults */,
 			);
 			path = Utils;
@@ -189,6 +203,7 @@
 		740D616D24802B5C005F9BC5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				74343FC12482EED100D71C7D /* Cells */,
 				7497E882248023150095E77E /* NotesListViewController.swift */,
 			);
 			path = UI;
@@ -290,6 +305,7 @@
 			children = (
 				74343F152482983600D71C7D /* MockUserDefaults.swift */,
 				74343FBF2482ECFA00D71C7D /* MockNotesListDelegate.swift */,
+				74343FCB2483C49A00D71C7D /* MockCreateNoteDelegate.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -308,6 +324,31 @@
 				74343FBD2482EC0C00D71C7D /* NotesListDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		74343FC12482EED100D71C7D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				74343FC22482EEDE00D71C7D /* NoteCell.swift */,
+				74343FC42483A74D00D71C7D /* EmptyListCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		74343FC82483C44E00D71C7D /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				74343FC92483C46A00D71C7D /* CreateNoteDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		74343FCD2483C95B00D71C7D /* DateUtils */ = {
+			isa = PBXGroup;
+			children = (
+				74343FCE2483C96F00D71C7D /* DateUtils.swift */,
+			);
+			path = DateUtils;
 			sourceTree = "<group>";
 		};
 		7491996424804B190011DCB7 /* Coordinator */ = {
@@ -371,6 +412,7 @@
 				74343F142482980100D71C7D /* Mocks */,
 				74343F1724829C2600D71C7D /* UserDefaultsManagerTests.swift */,
 				74343F192482BD3A00D71C7D /* NotesListViewModelTests.swift */,
+				74343FC62483B35B00D71C7D /* CreateNoteViewModelTests.swift */,
 				7497E897248023160095E77E /* Info.plist */,
 			);
 			path = NotesAppTests;
@@ -597,10 +639,13 @@
 				7497E883248023150095E77E /* NotesListViewController.swift in Sources */,
 				740D617B24802F0D005F9BC5 /* NotesDetailsCoordinator.swift in Sources */,
 				7491996824804B350011DCB7 /* AppCoordinator.swift in Sources */,
+				74343FCF2483C96F00D71C7D /* DateUtils.swift in Sources */,
 				740D617724802EF2005F9BC5 /* NotesListViewModel.swift in Sources */,
+				74343FCA2483C46A00D71C7D /* CreateNoteDelegate.swift in Sources */,
 				74343F1324828FA800D71C7D /* Note.swift in Sources */,
 				740D618324802FA3005F9BC5 /* CreateNoteViewModel.swift in Sources */,
 				740D617F24802F29005F9BC5 /* NotesDetailsViewController.swift in Sources */,
+				74343FC32482EEDE00D71C7D /* NoteCell.swift in Sources */,
 				74343F1124828F5C00D71C7D /* UserDefaultsManager.swift in Sources */,
 				740D618124802F96005F9BC5 /* CreateNoteCoordinator.swift in Sources */,
 				740D617924802EFF005F9BC5 /* NotesListCoordinator.swift in Sources */,
@@ -613,6 +658,7 @@
 				740D618524802FB0005F9BC5 /* CreateNoteViewController.swift in Sources */,
 				740D6188248030F2005F9BC5 /* R.generated.swift in Sources */,
 				740D617D24802F19005F9BC5 /* NotesDetailsViewModel.swift in Sources */,
+				74343FC52483A74D00D71C7D /* EmptyListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +669,8 @@
 				74343FC02482ECFA00D71C7D /* MockNotesListDelegate.swift in Sources */,
 				74343F1824829C2600D71C7D /* UserDefaultsManagerTests.swift in Sources */,
 				74343F1A2482BD3A00D71C7D /* NotesListViewModelTests.swift in Sources */,
+				74343FC72483B35B00D71C7D /* CreateNoteViewModelTests.swift in Sources */,
+				74343FCC2483C49A00D71C7D /* MockCreateNoteDelegate.swift in Sources */,
 				74343F162482983600D71C7D /* MockUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

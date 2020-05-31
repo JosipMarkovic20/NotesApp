@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var appCoordinator: AppCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setup(){
         self.window = UIWindow()
         guard let safeWindow = self.window else { return }
-        let appCoordinator = AppCoordinator(window: safeWindow)
+        self.appCoordinator = AppCoordinator(window: safeWindow)
         appCoordinator.start()
     }
 }

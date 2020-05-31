@@ -13,4 +13,21 @@ import RxSwift
 
 class CreateNoteViewController: UIViewController{
     
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+    let viewModel: CreateNoteViewModel
+    let disposeBag = DisposeBag()
+    
+    init(viewModel: CreateNoteViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

@@ -78,7 +78,7 @@ class NotesListViewModelTests: XCTestCase {
         initializeTests()
         viewModel.input.userInteractionSubject.onNext(.addNote(note: Note(title: "New Note", date: "29.05.2020.", content: "")))
         viewModel.input.userInteractionSubject.onNext(.openDetails(index: 0))
-        XCTAssertTrue(mockNotesListDelegate.functionCalled)
+        XCTAssertTrue(mockNotesListDelegate.openNoteCalled)
     }
         
     func initializeTests(){

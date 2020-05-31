@@ -11,4 +11,5 @@ import Foundation
 
 protocol NotesListDelegate: class{
     func openNote(note: Note)
+    func openAddNote()
 }

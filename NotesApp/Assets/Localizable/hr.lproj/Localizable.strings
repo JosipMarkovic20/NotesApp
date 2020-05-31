@@ -6,3 +6,4 @@
   Copyright © 2020 Josip Marković. All rights reserved.
 */
 "title" = "Bilješke";
+"empty_list" = "Tvoj popis je prazan. Klikni + za dodavanje nove bilješke.";

@@ -11,9 +11,14 @@ import Foundation
 
 class MockNotesListDelegate: NotesListDelegate{
 
-    var functionCalled = false
+    var openNoteCalled = false
+    var openAddNoteCalled = false
     
     func openNote(note: Note) {
-        functionCalled = true
+        openNoteCalled = true
+    }
+    
+    func openAddNote() {
+        openAddNoteCalled = true
     }
 }

@@ -21,7 +21,12 @@ class NotesListCoordinator: Coordinator{
         self.viewController = NotesListCoordinator.createNotesListController()
     }
     
+    deinit {
+        print("deinit \(self)")
+    }
+    
     func start(){
+        viewController.viewModel.notesListDelegate = self
         presenter.pushViewController(viewController, animated: true)
     }
     
@@ -30,6 +35,19 @@ class NotesListCoordinator: Coordinator{
         let controller = NotesListViewController(viewModel: viewModel)
         return controller
     }
+}
+
+extension NotesListCoordinator: NotesListDelegate{
+    func openNote(note: Note) {
+        
+    }
+    
+    func openAddNote() {
+        let coordinator = CreateNoteCoordinator(presenter: presenter, note: nil)
+        addChildCoordinator(coordinator)
+        coordinator.start()
+    }
+    
 }
 
 extension NotesListCoordinator: ParentCoordinatorDelegate{

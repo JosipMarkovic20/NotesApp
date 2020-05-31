@@ -37,6 +37,7 @@ class NotesListViewModel: ViewModelType{
         case addNote(note: Note)
         case deleteNote(index: Int)
         case openDetails(index: Int)
+        case openAddNote
     }
     
     var input: Input!
@@ -80,7 +81,10 @@ extension NotesListViewModel{
     
     func createScreenData(from notes: [Note]) -> [ItemType]{
         var screenData = [ItemType]()
-        notes.forEach { (note) in
+        let sortedNotes = notes.sorted { (lhs, rhs) -> Bool in
+            lhs.date > rhs.date
+        }
+        sortedNotes.forEach { (note) in
             screenData.append(.note(note: note))
         }
         if notes.isEmpty{
@@ -104,6 +108,8 @@ extension NotesListViewModel{
                     self.handleRemovingNote(at: index)
                 case .openDetails(let index):
                     self.handleOpenningNote(at: index)
+                case .openAddNote:
+                    self.notesListDelegate?.openAddNote()
                 }
             })
     }
