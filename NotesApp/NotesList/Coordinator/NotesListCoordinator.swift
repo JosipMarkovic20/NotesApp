@@ -39,13 +39,18 @@ class NotesListCoordinator: Coordinator{
 
 extension NotesListCoordinator: NotesListDelegate{
     func openNote(note: Note) {
-        
+        let coordinator = NotesDetailsCoordinator(presenter: presenter, note: note)
+        addChildCoordinator(coordinator)
+        coordinator.start()
+        coordinator.viewController.coordinatorDelegate = self
     }
     
     func openAddNote() {
         let coordinator = CreateNoteCoordinator(presenter: presenter, note: nil)
         addChildCoordinator(coordinator)
+        coordinator.viewController.viewModel.createNoteDelegate = self.viewController.viewModel
         coordinator.start()
+        coordinator.viewController.coordinatorDelegate = self
     }
     
 }

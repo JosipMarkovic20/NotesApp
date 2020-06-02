@@ -8,3 +8,6 @@
 
 "title" = "Notes";
 "empty_list" = "Your list is empty. Click + to add a new note.";
+"create_a_note" = "Create A Note";
+"title_placeholder" = "Title";
+"save_button" = "Save note";

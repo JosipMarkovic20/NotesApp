@@ -21,9 +21,11 @@ class CreateNoteViewModel: ViewModelType{
         var screenData: [ItemType]
         let refreshTableView: PublishSubject<TableRefresh>
         let errorPublisher: PublishSubject<Bool>
+        let popControllerSubject: PublishSubject<()>
     }
     
     struct Dependencies{
+        let userDefaultsManager: UserDefaultsManager
         let subscribeScheduler: SchedulerType
         var note: Note?
     }
@@ -56,7 +58,8 @@ class CreateNoteViewModel: ViewModelType{
         let output = Output(disposables: disposables,
                             screenData: [],
                             refreshTableView: PublishSubject(),
-                            errorPublisher: PublishSubject())
+                            errorPublisher: PublishSubject(),
+                            popControllerSubject: PublishSubject())
         self.input = input
         self.output = output
         return output
@@ -126,6 +129,12 @@ extension CreateNoteViewModel{
             guard let safeNote = createNote(titleItem: output.screenData[0], contentItem: output.screenData[1]) else {
                 return 
             }
+            if let safeOldNote = dependencies.note{
+                _ = dependencies.userDefaultsManager.editNote(oldNote: safeOldNote, newNote: safeNote)
+            }else{
+                _ = dependencies.userDefaultsManager.addNewNote(note: safeNote)
+            }
+            output.popControllerSubject.onNext(())
             createNoteDelegate?.saveNote(note: safeNote)
         }else{
             output.errorPublisher.onNext(true)

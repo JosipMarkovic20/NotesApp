@@ -140,3 +140,14 @@ extension NotesListViewModel{
         }
     }
 }
+
+extension NotesListViewModel: CreateNoteDelegate{
+    func saveNote(note: Note) {
+        let item = ItemType.note(note: note)
+        output.screenData.insert(item, at: 0)
+        output.screenData.removeAll { (item) -> Bool in
+            item == .empty
+        }
+        output.refreshTableView.onNext(.reloadTable)
+    }
+}

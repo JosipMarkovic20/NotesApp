@@ -7,3 +7,6 @@
 */
 "title" = "Bilješke";
 "empty_list" = "Tvoj popis je prazan. Klikni + za dodavanje nove bilješke.";
+"create_a_note" = "Stvori Bilješku";
+"title_placeholder" = "Naslov";
+"save_button" = "Spremi bilješku";

@@ -30,7 +30,7 @@ class CreateNoteCoordinator: Coordinator{
     }
     
     static func createViewController(note: Note?) -> CreateNoteViewController{
-        let viewModel = CreateNoteViewModel(dependencies: CreateNoteViewModel.Dependencies(subscribeScheduler: ConcurrentDispatchQueueScheduler(qos: .background),
+        let viewModel = CreateNoteViewModel(dependencies: CreateNoteViewModel.Dependencies(userDefaultsManager: UserDefaultsManager(userDefaults: .standard), subscribeScheduler: ConcurrentDispatchQueueScheduler(qos: .background),
                                                                                            note: note))
         return CreateNoteViewController(viewModel: viewModel)
     }
