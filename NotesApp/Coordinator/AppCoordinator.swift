@@ -23,8 +23,8 @@ class AppCoordinator: Coordinator{
     
     
     func start() {
-        #warning("ovdje srediti nav bar stil i ne zaboraviti svuda handlat boje za dark i light mode")
-        presenter.navigationBar.backgroundColor = .green
+        presenter.navigationBar.tintColor = R.color.navButton()
+        presenter.navigationBar.backgroundColor = R.color.navBackground()
         let notesListCoordinator = NotesListCoordinator(presenter: self.presenter)
         window.rootViewController = presenter
         window.makeKeyAndVisible()

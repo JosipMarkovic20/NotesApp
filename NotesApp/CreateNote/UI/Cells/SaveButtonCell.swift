@@ -16,7 +16,7 @@ class SaveButtonCell: UITableViewCell {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(R.string.localizable.save_button(), for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
         return button
     }()
     

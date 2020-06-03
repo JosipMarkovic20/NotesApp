@@ -67,7 +67,7 @@ extension NotesListViewModel{
     
     func initializeScreenData(for subject: ReplaySubject<()>) -> Disposable{
         return subject
-            .map({ (notes) -> [ItemType] in
+            .map({[unowned self] (notes) -> [ItemType] in
                 let notes = self.dependencies.userDefaultsManager.getNotes()
                 return self.createScreenData(from: notes)
             })
@@ -138,16 +138,5 @@ extension NotesListViewModel{
         case .empty:
             break
         }
-    }
-}
-
-extension NotesListViewModel: CreateNoteDelegate{
-    func saveNote(note: Note) {
-        let item = ItemType.note(note: note)
-        output.screenData.insert(item, at: 0)
-        output.screenData.removeAll { (item) -> Bool in
-            item == .empty
-        }
-        output.refreshTableView.onNext(.reloadTable)
     }
 }

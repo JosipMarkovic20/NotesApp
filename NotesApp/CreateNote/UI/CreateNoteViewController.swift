@@ -54,7 +54,11 @@ class CreateNoteViewController: UIViewController{
     }
     
     func setupUI(){
-        title = R.string.localizable.create_a_note()
+        if viewModel.dependencies.note != nil{
+            title = R.string.localizable.edit_a_note()
+        }else{
+            title = R.string.localizable.create_a_note()
+        }
         view.addSubview(tableView)
         setupConstraints()
         setupTableView()

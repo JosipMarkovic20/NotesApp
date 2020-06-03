@@ -17,10 +17,12 @@ class CreateNoteViewModelTests: XCTestCase {
     let disposeBag = DisposeBag()
     var errorObserver: TestableObserver<Bool>!
     var mockCreateNoteDelegate: MockCreateNoteDelegate!
+    var mockUserDefaults: MockUserDefaults!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         testScheduler = TestScheduler(initialClock: 0)
+        mockUserDefaults = MockUserDefaults(notes: nil)
         mockCreateNoteDelegate = MockCreateNoteDelegate()
         initializeViewModel()
         errorObserver = testScheduler.createObserver(Bool.self)
@@ -33,6 +35,7 @@ class CreateNoteViewModelTests: XCTestCase {
         viewModel = nil
         errorObserver = nil
         mockCreateNoteDelegate = nil
+        mockUserDefaults = nil
         super.tearDown()
     }
 
@@ -89,7 +92,7 @@ class CreateNoteViewModelTests: XCTestCase {
     }
     
     func initializeViewModel(){
-        viewModel = CreateNoteViewModel(dependencies: CreateNoteViewModel.Dependencies(subscribeScheduler: testScheduler, note: nil))
+        viewModel = CreateNoteViewModel(dependencies: CreateNoteViewModel.Dependencies(userDefaultsManager: UserDefaultsManager(userDefaults: mockUserDefaults), subscribeScheduler: testScheduler, note: nil))
         let input = CreateNoteViewModel.Input(loadDataSubject: ReplaySubject.create(bufferSize: 1),
                                              userInteractionSubject: PublishSubject())
         let output = viewModel.transform(input: input)

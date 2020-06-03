@@ -40,6 +40,11 @@ class NotesListViewController: UIViewController {
         viewModel.input.loadDataSubject.onNext(())
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.input.loadDataSubject.onNext(())
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if isMovingFromParent{

@@ -176,13 +176,6 @@
 			path = NotesList;
 			sourceTree = "<group>";
 		};
-		740D616824802A9C005F9BC5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		740D616924802AA0005F9BC5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,7 +410,6 @@
 				740D616C24802AA8005F9BC5 /* Models */,
 				740D616A24802AA3005F9BC5 /* Delegates */,
 				740D616924802AA0005F9BC5 /* Utils */,
-				740D616824802A9C005F9BC5 /* Extensions */,
 				740D616724802A99005F9BC5 /* NotesList */,
 				740D616624802A97005F9BC5 /* NotesDetails */,
 				740D616524802A94005F9BC5 /* CreateNote */,
