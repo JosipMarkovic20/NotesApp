@@ -1,0 +1,14 @@
+/* 
+  Localizible.strings
+  NotesApp
+
+  Created by Josip Marković on 28/05/2020.
+  Copyright © 2020 Josip Marković. All rights reserved.
+*/
+
+"title" = "Notes";
+"empty_list" = "Your list is empty. Click + to add a new note.";
+"create_a_note" = "Create A Note";
+"edit_a_note" = "Edit A Note";
+"title_placeholder" = "Title";
+"save_button" = "Save note";

@@ -1,0 +1,13 @@
+/* 
+  Localizible.strings
+  NotesApp
+
+  Created by Josip Marković on 28/05/2020.
+  Copyright © 2020 Josip Marković. All rights reserved.
+*/
+"title" = "Bilješke";
+"empty_list" = "Tvoj popis je prazan. Klikni + za dodavanje nove bilješke.";
+"create_a_note" = "Stvori Bilješku";
+"edit_a_note" = "Uredi Bilješku";
+"title_placeholder" = "Naslov";
+"save_button" = "Spremi bilješku";

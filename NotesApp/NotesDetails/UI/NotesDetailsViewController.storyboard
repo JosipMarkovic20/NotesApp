@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notes Details View Controller-->
+        <scene sceneID="hJa-5d-XPF">
+            <objects>
+                <viewController storyboardIdentifier="NotesDetailsController" id="j2t-oY-NBm" customClass="NotesDetailsViewController" customModule="NotesApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pQW-Ys-jpG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSj-aY-CoE" userLabel="titleLabel">
+                                <rect key="frame" x="15" y="79" width="384" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEM-0y-7kj" userLabel="dateLabel">
+                                <rect key="frame" x="15" y="136" width="384" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" name="navBackground"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAW-w1-nAm" userLabel="contentLabel">
+                                <rect key="frame" x="15" y="179" width="384" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rIc-lZ-x2u" firstAttribute="trailing" secondItem="jEM-0y-7kj" secondAttribute="trailing" constant="15" id="5PV-md-Q2q"/>
+                            <constraint firstItem="bAW-w1-nAm" firstAttribute="leading" secondItem="rIc-lZ-x2u" secondAttribute="leading" constant="15" id="RcC-CV-970"/>
+                            <constraint firstItem="rIc-lZ-x2u" firstAttribute="trailing" secondItem="bAW-w1-nAm" secondAttribute="trailing" constant="15" id="UHF-lC-y1k"/>
+                            <constraint firstItem="KSj-aY-CoE" firstAttribute="leading" secondItem="rIc-lZ-x2u" secondAttribute="leading" constant="15" id="YCf-Tr-lKP"/>
+                            <constraint firstItem="KSj-aY-CoE" firstAttribute="top" secondItem="rIc-lZ-x2u" secondAttribute="top" constant="35" id="dQq-rp-5Rs"/>
+                            <constraint firstItem="jEM-0y-7kj" firstAttribute="top" secondItem="KSj-aY-CoE" secondAttribute="bottom" constant="30" id="fll-oj-lS0"/>
+                            <constraint firstItem="jEM-0y-7kj" firstAttribute="leading" secondItem="rIc-lZ-x2u" secondAttribute="leading" constant="15" id="fmx-SW-PbP"/>
+                            <constraint firstItem="rIc-lZ-x2u" firstAttribute="trailing" secondItem="KSj-aY-CoE" secondAttribute="trailing" constant="15" id="gIk-nY-gZp"/>
+                            <constraint firstItem="bAW-w1-nAm" firstAttribute="top" secondItem="jEM-0y-7kj" secondAttribute="bottom" constant="25" id="pLB-Yv-fbU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rIc-lZ-x2u"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentLabel" destination="bAW-w1-nAm" id="0ij-qP-GCs"/>
+                        <outlet property="dateLabel" destination="jEM-0y-7kj" id="K8B-2j-GXd"/>
+                        <outlet property="titleLabel" destination="KSj-aY-CoE" id="NfU-rp-1CJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kEj-KB-Iaw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9" y="138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="navBackground">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
