@@ -125,9 +125,26 @@ extension NotesListViewModel{
     }
     
     func handleRemovingNote(at index: Int){
-        output.screenData.remove(at: index)
-        let indexPath = IndexPath(row: index, section: 0)
-        output.refreshTableView.onNext(.deleteRows(indexPaths: [indexPath]))
+        let noteItem = output.screenData[index]
+        switch noteItem{
+        case .note(let note):
+            _ = dependencies.userDefaultsManager.deleteNote(note: note)
+            output.screenData.remove(at: index)
+            let indexPath = IndexPath(row: index, section: 0)
+            output.refreshTableView.onNext(.deleteRows(indexPaths: [indexPath]))
+            checkIfEmptyStateNeeded()
+        case .empty:
+            break
+        }
+    }
+    
+    func checkIfEmptyStateNeeded(){
+        if output.screenData.isEmpty{
+            Timer.scheduledTimer(withTimeInterval: TimeInterval.init(exactly: 0.25)!, repeats: false) {[unowned self] (_) in
+                self.output.screenData.append(.empty)
+                self.output.refreshTableView.onNext(.insertRows(indexPaths: [IndexPath(row: 0, section: 0)]))
+            }
+        }
     }
     
     func handleOpenningNote(at index: Int){

@@ -73,22 +73,32 @@ class CreateNoteViewController: UIViewController{
     
     func initializeVM(){
         let input = CreateNoteViewModel.Input(loadDataSubject: ReplaySubject.create(bufferSize: 1),
-                                             userInteractionSubject: PublishSubject())
+                                              userInteractionSubject: PublishSubject())
         let output = viewModel.transform(input: input)
         output.disposables.forEach { (disposable) in
             disposable.disposed(by: disposeBag)
         }
         initializeTableRefresh(for: output.refreshTableView).disposed(by: disposeBag)
         initializePopControllerSubject(for: output.popControllerSubject).disposed(by: disposeBag)
+        initializeErrorPopUpObserver(for: output.errorPublisher).disposed(by: disposeBag)
+    }
+    
+    func initializeErrorPopUpObserver(for subject: PublishSubject<Bool>) -> Disposable{
+        return subject
+            .subscribeOn(viewModel.dependencies.subscribeScheduler)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {[unowned self] (_) in
+                self.displayErrorPopUp()
+            })
     }
     
     func initializePopControllerSubject(for subject: PublishSubject<()>) -> Disposable{
         return subject
-        .subscribeOn(viewModel.dependencies.subscribeScheduler)
-        .observeOn(MainScheduler.instance)
-        .subscribe(onNext: {[unowned self] (tableRefresh) in
-            self.navigationController?.popViewController(animated: true)
-        })
+            .subscribeOn(viewModel.dependencies.subscribeScheduler)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {[unowned self] (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
     }
     
     func initializeTableRefresh(for subject: PublishSubject<TableRefresh>) -> Disposable{
@@ -116,6 +126,16 @@ class CreateNoteViewController: UIViewController{
         tableView.register(TitleCell.self, forCellReuseIdentifier: TITLE_CELL)
         tableView.register(ContentCell.self, forCellReuseIdentifier: CONTENT_CELL)
         tableView.register(SaveButtonCell.self, forCellReuseIdentifier: SAVE_CELL)
+    }
+    
+    func displayErrorPopUp(){
+        let alert = UIAlertController(title: R.string.localizable.input_error(), message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .cancel, handler: { (_) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        DispatchQueue.main.async {
+            self.navigationController?.present(alert, animated: true, completion: nil)
+        }
     }
 }
 

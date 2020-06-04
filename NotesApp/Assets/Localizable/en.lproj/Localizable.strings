@@ -12,3 +12,5 @@
 "edit_a_note" = "Edit A Note";
 "title_placeholder" = "Title";
 "save_button" = "Save note";
+"input_error" = "Input fields are manadatory";
+"ok" = "OK";

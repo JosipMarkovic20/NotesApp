@@ -37,7 +37,6 @@ class NotesListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         initializeVM()
-        viewModel.input.loadDataSubject.onNext(())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -140,5 +139,19 @@ extension NotesListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.input.userInteractionSubject.onNext(.openDetails(index: indexPath.row))
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            viewModel.input.userInteractionSubject.onNext(.deleteNote(index: indexPath.row))
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if viewModel.output.screenData[indexPath.row] == .empty{
+            return .none
+        }else{
+            return .delete
+        }
     }
 }

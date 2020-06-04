@@ -11,3 +11,5 @@
 "edit_a_note" = "Uredi Bilješku";
 "title_placeholder" = "Naslov";
 "save_button" = "Spremi bilješku";
+"input_error" = "Polja za unos su obavezna";
+"ok" = "OK";

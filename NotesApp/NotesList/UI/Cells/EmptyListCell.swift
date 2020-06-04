@@ -30,6 +30,7 @@ class EmptyListCell: UITableViewCell{
     }
     
     private func setupUI(){
+        selectionStyle = .none
         contentView.addSubview(title)
         setupConstraints()
     }
